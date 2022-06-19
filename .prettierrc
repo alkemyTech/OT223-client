@@ -1,4 +1,8 @@
 {
   "extends": ["airbnb", "prettier"],
-  "plugins": ["prettier"]
+  "plugins": ["prettier"],
+  "rules": {
+    "tabWidth": 2,
+    "useTabs": false
+  }
 }

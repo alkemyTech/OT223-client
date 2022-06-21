@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Routesdb = [
+const Routers = [
     {
         path: "/page1",
         element: <h1>FIRST PAGE</h1>
@@ -13,4 +13,4 @@ const Routesdb = [
 ]
 
 
-export default Routesdb
+export default Routers

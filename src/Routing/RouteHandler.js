@@ -1,18 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Routesdb from "./Routesdb.js";
-
+import Routers from "./Routers.js"
 
 const RouteHandler = () =>{
 
     return (
-        <div>
             <BrowserRouter>
             <Routes>
-                {Routesdb.map((r) =>{return(<Route path={r.path} element={r.element}/>);})}
+                {Routers.map((route) =>{return(<Route path={route.path} element={route.element}/>);})}
             </Routes>
            </BrowserRouter>
-        </div>
     )
 }
 

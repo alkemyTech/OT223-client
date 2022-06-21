@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
-import RouteHandler from './RouteHandler.js'
+import RouteHandler from './Routing/RouteHandler.js'
 function App() {
   return (
     <div className="App">

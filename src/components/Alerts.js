@@ -1,8 +1,8 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 
-export const ConfirmAlert = () => {
-    function confirmation(){
+const CustomAlert = (params) => {
+    const confirmation = () => {
         Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -22,15 +22,7 @@ export const ConfirmAlert = () => {
         })
     }
 
-    return (
-        <div>
-            <button onClick={() => confirmation()}>Confirm</button>
-        </div>
-    );
-}
-
-export const ErrorAlert = () => {
-    function error(){
+    const error = () => {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -39,15 +31,7 @@ export const ErrorAlert = () => {
         })
     }
 
-    return (
-        <div>
-            <button onClick={() => error()}>Error</button>
-        </div>
-    );
-}
-
-export const InfoAlert = () => {
-    function information(){
+    const information = () => {
         Swal.fire({
             title: '<strong>Information</strong>',
             icon: 'info',
@@ -64,9 +48,13 @@ export const InfoAlert = () => {
                 'I am not interested',
             })
         }
-        return (
-            <div>
-                <button onClick={() => information()}>Information</button>
-            </div>
-        );
-} 
+
+    return (
+        <div>
+            <button onClick={() => confirmation()}>Confirm</button>
+            <button onClick={() => error()}>Error</button>
+            <button onClick={() => information()}>Information</button>
+        </div>
+    );
+}
+export default CustomAlert;

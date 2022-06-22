@@ -1,15 +1,17 @@
 import React from 'react';
-import SweetAlert from 'sweetalert2';
+import SweetAlert from 'sweetalert2-react';
 
-const CustomAlert = ({ title= 'Hola', text = '', icon ='info', state, setState}) => {
+function CustomAlert({
+  title = '', text = '', icon = 'info', state, setState,
+}) {
   return (
-     <SweetAlert
-        show={state}
-        title={title}
-        text={text}
-        icon={icon}
-        onConfirm={() => setState(!state)}
-      />
-  )
+    <SweetAlert
+      show={state}
+      title={title}
+      text={text}
+      icon={icon}
+      onConfirm={() => setState(!state)}
+    />
+  );
 }
 export default CustomAlert;

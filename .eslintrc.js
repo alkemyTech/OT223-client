@@ -18,6 +18,6 @@ module.exports = {
     'no-param-reassign': 0,
     'no-use-before-define': 0,
     'react/prop-types': 0,
-    'react/jsx-filename-extension': 0
+    'react/jsx-filename-extension': 0,
   },
 };

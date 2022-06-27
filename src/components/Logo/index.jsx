@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../assets/images/logo.png';
 
-function Logo({ size = '100', ...props }) {
+function Logo({ size = '100', alt, ...props }) {
   const styles = {
     width: `${size}px`,
   };
@@ -10,7 +10,7 @@ function Logo({ size = '100', ...props }) {
     <img
       style={styles}
       src={logo}
-      alt='Somos Más Logo'
+      alt={alt}
       {...props}
     />
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FacebookIcon, InstagramIcon, MailIcon } from '../Icon';
+import Icon from '../Icon';
 import AnchorBlank from '../BlankAnchor';
 import styles from './footer.module.css';
 import Logo from '../Logo';
@@ -41,17 +41,17 @@ function Footer() {
         <div className='row g-0 justify-content-center'>
           <div className={`${styles.social_media_item} mx-2`}>
             <AnchorBlank className='d-inline-block' href='https://facebook.com/Somos_Más'>
-              <FacebookIcon size='45' />
+              <Icon type='facebook' size={45} />
             </AnchorBlank>
           </div>
           <div className={`${styles.social_media_item} mx-2`}>
             <AnchorBlank className='d-inline-block' href='https://facebook.com/Somos_Más'>
-              <InstagramIcon size='45' />
+              <Icon type='instagram' size={45} />
             </AnchorBlank>
           </div>
           <div className={`${styles.social_media_item} mx-2`}>
             <AnchorBlank className='d-inline-block' href='https://facebook.com/Somos_Más'>
-              <MailIcon size='45' />
+              <Icon type='mail' size={45} />
             </AnchorBlank>
           </div>
         </div>

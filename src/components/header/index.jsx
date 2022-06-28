@@ -30,31 +30,23 @@ function Header() {
       text: 'Contribuye',
       route: '/contribuciones',
     },
-    {
-      text: 'Log in',
-      route: '/login',
-    },
-    {
-      text: 'Registrate',
-      route: '/registro',
-    },
   ];
 
   return (
-    <nav className='navbar navbar-expand-lg bg-light'>
+    <nav className={`${styles.navbarContainer} navbar navbar-expand-lg`}>
       <div className='container-fluid'>
-        <img src={logo} alt='logo-somos-mas' className={`${styles.logo}`} />
+        <LinkRouter to='/inicio'><img src={logo} alt='logo-somos-mas' className={`${styles.logo}`} /></LinkRouter>
         <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon' />
         </button>
-        <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+        <div className={`${styles.navigationMenu} collapse navbar-collapse`} id='navbarSupportedContent'>
           {
-            pages && pages?.map((page) => <LinkRouter to='/'>{page.text}</LinkRouter>)
+            pages?.map((page) => <LinkRouter to={page.route} key={page.text} className={`${styles.menuItems}`}>{page.text}</LinkRouter>)
           }
-          <form className='d-flex' role='search'>
-            <input className='form-control me-2' type='search' placeholder='Search' aria-label='Search' />
-            <button className='btn btn-outline-success' type='submit'>Search</button>
-          </form>
+          <div className='d-flex'>
+            <LinkRouter to='/login' className={`${styles.linksButtons}`}><button className={`${styles.logInButton}`} type='button'>Log in</button></LinkRouter>
+            <LinkRouter to='/registro' className={`${styles.linksButtons}`}><button className={`${styles.registerButton}`} type='button'>Registrate</button></LinkRouter>
+          </div>
         </div>
       </div>
     </nav>

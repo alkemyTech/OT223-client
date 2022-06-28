@@ -5,11 +5,14 @@ import './App.css';
 import Counter from './features/counter/Counter';
 import Home from './pages/home/index';
 import Header from './components/header/index';
+import RouteHandler from './Routing/RouteHandler';
 
 function App() {
   return (
+
     <div className='App'>
       <BrowserRouter>
+        <RouteHandler />
         <Header />
         <header className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />

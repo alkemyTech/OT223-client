@@ -9,10 +9,9 @@ import RouteHandler from './Routing/RouteHandler';
 
 function App() {
   return (
-
     <div className='App'>
+      <RouteHandler />
       <BrowserRouter>
-        <RouteHandler />
         <Header />
         <header className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />

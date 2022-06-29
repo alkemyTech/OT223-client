@@ -4,6 +4,15 @@ import Icon from '../Icon';
 import AnchorBlank from '../BlankAnchor';
 import styles from './footer.module.css';
 import Logo from '../Logo';
+import organization from '../../const/organization.json';
+
+const { social_media: socialMedia } = organization;
+// temp until redux-saga setup for api requests
+const socialMediaData = {
+  instagram: 'Somos_Más',
+  facebook: 'Somos_Más',
+  mail: 'somosfundacionmas@gmail.com',
+};
 
 // TODO: make logo component
 // TODO: navbar component
@@ -16,6 +25,7 @@ function Footer() {
       <div className={`${styles.footer_navbar} pt-5`}>
         <nav className='container'>
           <ul>
+            {/* This is hard coded, when there's a navbar component, it'll be replaced */}
             <li className='d-inline-block mx-3'>
               <a href='/' className='text-decoration-none text-dark'>Inicio</a>
             </li>
@@ -39,21 +49,15 @@ function Footer() {
       </div>
       <div className='footer__social-media container mt-5'>
         <div className='row g-0 justify-content-center'>
-          <div className={`${styles.social_media_item} mx-2`}>
-            <AnchorBlank className='d-inline-block' href='https://facebook.com/Somos_Más'>
-              <Icon type='facebook' size={45} />
-            </AnchorBlank>
-          </div>
-          <div className={`${styles.social_media_item} mx-2`}>
-            <AnchorBlank className='d-inline-block' href='https://facebook.com/Somos_Más'>
-              <Icon type='instagram' size={45} />
-            </AnchorBlank>
-          </div>
-          <div className={`${styles.social_media_item} mx-2`}>
-            <AnchorBlank className='d-inline-block' href='https://facebook.com/Somos_Más'>
-              <Icon type='mail' size={45} />
-            </AnchorBlank>
-          </div>
+          {
+            socialMedia.map((social) => (
+              <div className={`${styles.social_media_item} mx-2`} key={socialMedia.name}>
+                <AnchorBlank className='d-inline-block' href={`${social.baseUrl}${socialMediaData[social.name]}`}>
+                  <Icon type={social.name} size={45} />
+                </AnchorBlank>
+              </div>
+            ))
+          }
         </div>
       </div>
       <div>

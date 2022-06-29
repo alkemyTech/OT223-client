@@ -1,16 +1,16 @@
-import React from "react";
-import { Oval } from "react-loader-spinner";
+import React from 'react';
+import { Oval } from 'react-loader-spinner';
 
-const SetupLoader = ({
+function SetupLoader({
   width = 100,
   height = 100,
   strokeWidth = 5,
-  color = "blue",
-  secondaryColor = "white",
-}) => {
+  color = 'blue',
+  secondaryColor = 'white',
+}) {
   return (
     <Oval
-      ariaLabel="loading-indicator"
+      ariaLabel='loading-indicator'
       height={height}
       width={width}
       strokeWidth={strokeWidth}
@@ -18,6 +18,6 @@ const SetupLoader = ({
       secondaryColor={secondaryColor}
     />
   );
-};
+}
 
 export default SetupLoader;

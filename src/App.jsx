@@ -3,12 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 import Counter from './features/counter/Counter';
 import RouteHandler from './Routing/RouteHandler';
+import Slider from './components/slider';
 
 function App() {
   return (
 
     <div className='App'>
       <RouteHandler />
+      <Slider />
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
         <Counter />

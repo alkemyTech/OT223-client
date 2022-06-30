@@ -51,7 +51,7 @@ function Footer() {
         <div className='row g-0 justify-content-center'>
           {
             socialMedia.map((social) => (
-              <div className={`${styles.social_media_item} mx-2`} key={socialMedia.name}>
+              <div className={`${styles.social_media_item} mx-2`} key={social.name}>
                 <AnchorBlank className='d-inline-block' href={`${social.baseUrl}${socialMediaData[social.name]}`}>
                   <Icon type={social.name} size={45} />
                 </AnchorBlank>

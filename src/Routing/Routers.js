@@ -1,13 +1,19 @@
 import React from 'react';
+import Header from '../components/header';
+import Home from '../views/home';
 
 const Routers = [
   {
-    path: '/page1',
-    element: <h1>FIRST PAGE</h1>,
+    path: '/',
+    element: <Header />,
   },
   {
-    path: '/page2',
-    element: <h1>SECOND PAGE</h1>,
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: '/home',
+    element: <Home />,
   },
 ];
 

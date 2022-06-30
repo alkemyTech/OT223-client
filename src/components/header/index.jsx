@@ -1,6 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { Link as LinkRouter } from 'react-router-dom';
 import logo from '../../assets/LOGO-SOMOS-MAS.png';
 import styles from './header.module.css';

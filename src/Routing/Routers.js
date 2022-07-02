@@ -1,9 +1,10 @@
 import React from 'react';
+import Login from '../components/views/Login';
 
 const Routers = [
   {
-    path: '/page1',
-    element: <h1>FIRST PAGE</h1>,
+    path: '/login',
+    element: <Login />,
   },
   {
     path: '/page2',

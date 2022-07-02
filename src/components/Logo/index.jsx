@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from '../../assets/images/logo.png';
+import { useSelector } from 'react-redux';
 
 function Logo({ size = '100', alt, ...props }) {
+  const imageURL = useSelector((state) => state.organization.organization.image);
   const styles = {
     width: `${size}px`,
   };
@@ -9,7 +10,7 @@ function Logo({ size = '100', alt, ...props }) {
   return (
     <img
       style={styles}
-      src={logo}
+      src={imageURL}
       alt={alt}
       {...props}
     />

@@ -1,22 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Icon from '../Icon';
 import AnchorBlank from '../BlankAnchor';
-import styles from './footer.module.css';
 import Logo from '../Logo';
-import organization from '../../const/organization.json';
+import styles from './footer.module.css';
 
-const { social_media: socialMedia } = organization;
-// temp until redux-saga setup for api requests
-const socialMediaData = {
-  instagram: 'Somos_Más',
-  facebook: 'Somos_Más',
-  mail: 'somosfundacionmas@gmail.com',
-};
-
-// TODO: make logo component
 // TODO: navbar component
 function Footer() {
+  const organization = useSelector((state) => state.organization.organization);
+
   return (
     <footer className={`${styles.footer} text-center position-relative pt-5`}>
       <div className={`${styles.footer__logo} position-absolute start-50 translate-middle`}>
@@ -50,9 +43,9 @@ function Footer() {
       <div className='footer__social-media container mt-5'>
         <div className='row g-0 justify-content-center'>
           {
-            socialMedia.map((social) => (
+            organization.social_media.map((social) => (
               <div className={`${styles.social_media_item} mx-2`} key={social.name}>
-                <AnchorBlank className='d-inline-block' href={`${social.baseUrl}${socialMediaData[social.name]}`}>
+                <AnchorBlank className='d-inline-block' href={social.url}>
                   <Icon type={social.name} size={45} />
                 </AnchorBlank>
               </div>

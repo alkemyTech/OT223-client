@@ -1,15 +1,14 @@
 import React from 'react';
-import './App.css';
+import Routing from './router';
 import Footer from './components/Footer';
-import RouteHandler from './Routing/RouteHandler';
+import './App.css';
 
 function App() {
   return (
-
-    <div className='App'>
-      <RouteHandler />
+    <>
+      <Routing />
       <Footer />
-    </div>
+    </>
   );
 }
 

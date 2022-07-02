@@ -23,5 +23,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
     'import/prefer-default-export': 0,
     'no-console': 0,
+    'linebreak-style': 'off',
+    'import/no-unresolved': 0,
   },
 };

@@ -7,7 +7,7 @@ export const testimonialsSlice = createSlice({
     isLoading: false,
   },
   reducers: {
-    getAllTestimonials: (state) => {
+    getAllTestimonialsStart: (state) => {
       state.isLoading = true;
     },
     getAllTestimonialsSuccess: (state, action) => {
@@ -21,7 +21,7 @@ export const testimonialsSlice = createSlice({
 });
 
 export const {
-  getAllTestimonials, getAllTestimonialsSuccess, getAllTestimonialsFailure,
+  getAllTestimonialsStart, getAllTestimonialsSuccess, getAllTestimonialsFailure,
 } = testimonialsSlice.actions;
 
 export default testimonialsSlice.reducer;

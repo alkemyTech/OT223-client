@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Col,
   Container,
   Form,
+  FormGroup,
+  Label,
   Row,
 } from 'reactstrap';
 
@@ -10,6 +12,14 @@ import CustomInput from '../../components/input';
 import CustomButton from '../../components/button';
 
 function ScreenContact() {
+  const [data, setData] = useState({
+    names: '', email: '', consult: '',
+  });
+  const handleChange = (e) => setData({ ...data, [e.target.name]: e.target.value });
+  const onSubmit = (event) => {
+    event.preventDefault();
+    console.log(data);
+  };
   return (
     <Container>
       <Row>
@@ -24,28 +34,49 @@ function ScreenContact() {
             variant='danger'
           />
           <p className='fs-3 fw-bolder mb-3'>¡Contactate con nosotros!</p>
-          <Form>
-            <CustomInput
-              type='text'
-              name='names'
-              id='names'
-              placeholder='Nombre y Apellido'
-              isRequired
-            />
-            <CustomInput
-              type='email'
-              name='email'
-              id='email'
-              placeholder='Email'
-              isRequired
-            />
-            <CustomInput
-              type='textarea'
-              name='consult'
-              id='consult'
-              placeholder='Escribe tu consulta...'
-              isRequired={false}
-            />
+          <Form onSubmit={onSubmit}>
+            <FormGroup floating>
+              <CustomInput
+                type='text'
+                name='names'
+                id='names'
+                placeholder='Nombre y Apellido'
+                value={data.names}
+                onChange={handleChange}
+                isRequired
+              />
+              <Label for='names'>
+                Nombre y Apellido
+              </Label>
+            </FormGroup>
+            <FormGroup floating>
+              <CustomInput
+                type='email'
+                name='email'
+                id='email'
+                placeholder='Email'
+                value={data.email}
+                onChange={handleChange}
+                isRequired
+              />
+              <Label for='email'>
+                Email
+              </Label>
+            </FormGroup>
+            <FormGroup floating>
+              <CustomInput
+                type='textarea'
+                name='consult'
+                id='consult'
+                placeholder='Escribe tu consulta...'
+                value={data.consult}
+                onChange={handleChange}
+                isRequired
+              />
+              <Label for='consult'>
+                Escribe tu consulta...
+              </Label>
+            </FormGroup>
             <CustomButton
               type='submit'
               className='fw-bolder text-light float-start'

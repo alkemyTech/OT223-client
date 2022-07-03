@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'reactstrap';
 
 function CustomButton({
-  className, type = 'button', texto, color = '#FF0000', variant,
+  variant, className, type = 'button', texto, onClick, color = '#FF0000',
 }) {
   const style = {
     backgroundColor: color,
@@ -13,6 +13,7 @@ function CustomButton({
       className={className}
       type={type}
       style={style}
+      onClick={onClick}
     >
       {texto}
     </Button>

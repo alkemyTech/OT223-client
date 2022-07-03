@@ -1,22 +1,18 @@
 import React from 'react';
-import { FormGroup, Input, Label } from 'reactstrap';
+import { Input } from 'reactstrap';
 
 function CustomInput({
-  type, name, id, isRequired, placeholder,
+  type, name, id, placeholder, onChange, isRequired,
 }) {
   return (
-    <FormGroup floating>
-      <Input
-        id={id}
-        name={name}
-        placeholder={placeholder}
-        type={type}
-        required={isRequired}
-      />
-      <Label for={id}>
-        {placeholder}
-      </Label>
-    </FormGroup>
+    <Input
+      type={type}
+      name={name}
+      id={id}
+      placeholder={placeholder}
+      onChange={onChange}
+      required={isRequired}
+    />
   );
 }
 

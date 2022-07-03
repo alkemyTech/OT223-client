@@ -6,7 +6,7 @@ import {
   incrementByAmount,
   incrementAsync,
   selectCount,
-} from './counterSlice';
+} from '../../store/slicing/counterSlice';
 import styles from './Counter.module.css';
 
 export default function Counter() {

@@ -42,7 +42,7 @@ function Header() {
       },
     ],
   });
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
 
   function activeItem(index) {
     setNavbar({ ...navbar, activeItem: navbar.pages[index] });
@@ -65,7 +65,7 @@ function Header() {
         <img src={logo} alt='logo-somos-mas' className={`${styles.logo}`} />
       </LinkRouter>
       <NavbarToggler onClick={() => setToggle(!toggle)} />
-      <Collapse navbar className={`${styles.navigationMenu}`}>
+      <Collapse navbar className={`${styles.navigationMenu}`} id={toggle ? `${styles.hidden}` : ''}>
         {
           navbar.pages?.map((page, index) => (
             <LinkRouter

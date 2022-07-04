@@ -1,12 +1,10 @@
-/* ---- Library Imports ---- */
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, Button } from 'reactstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
-
 /* ---- Imports to Components ---- */
-import TextForm from '../../components/TextForm';
-import validationScheme from './utils/validation';
+import TextForm from '../../components/textForm';
+import validationScheme from '../../utils/validation';
 
 function RegistrationForm() {
   const {

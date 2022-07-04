@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
   },
   ignorePatterns: ['public/**/*.js', 'test/**'],
-  extends: ['plugin:react/recommended', 'airbnb'],
+  extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -24,6 +24,6 @@ module.exports = {
     'import/prefer-default-export': 0,
     'no-console': 0,
     'linebreak-style': 'off',
-    'import/no-unresolved': 0,
+    'import/no-unresolved': 0
   },
 };

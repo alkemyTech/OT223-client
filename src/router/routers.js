@@ -1,14 +1,15 @@
-import React from 'react';
+import React from "react";
+import Register from "../views/register";
 
 const Routers = [
   {
-    path: '/',
+    path: "/",
     element: <h1>FIRST PAGE</h1>,
     id: 0,
   },
   {
-    path: '/page2',
-    element: <h1>SECOND PAGE</h1>,
+    path: "/register",
+    element: <Register />,
     id: 1,
   },
 ];

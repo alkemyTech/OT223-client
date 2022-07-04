@@ -21,5 +21,8 @@ module.exports = {
     'react/jsx-filename-extension': 0,
     'linebreak-style': 'off',
     'import/no-unresolved': 0,
+    'react/jsx-props-no-spreading': 'off',
+    'object-curly-newline': 'off',
+    'no-console': 'off',
   },
 };

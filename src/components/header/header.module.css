@@ -213,7 +213,7 @@
     width: 100%;
     border: none;
     padding: 0;
-    background-color: #f8f9fa;
+    background-color: #f8f9fa !important;
   }
   .menuItems:nth-child(8) {
     margin: 0 0 0.5rem;

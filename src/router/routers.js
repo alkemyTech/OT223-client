@@ -1,10 +1,11 @@
 import React from 'react';
+import Home from '../views/home';
 import Register from '../views/register';
 
 const Routers = [
   {
     path: '/',
-    element: <h1>FIRST PAGE</h1>,
+    element: <Home />,
     id: 0,
   },
   {

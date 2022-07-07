@@ -1,13 +1,10 @@
 import React from 'react';
 import './App.css';
-import RouteHandler from './Routing/RouteHandler';
+import Routing from './router';
 
 function App() {
   return (
-
-    <div className='App'>
-      <RouteHandler />
-    </div>
+    <Routing />
   );
 }
 

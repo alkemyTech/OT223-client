@@ -4,7 +4,7 @@ import {
 } from 'reactstrap';
 import slides from './carouselTest';
 
-function Slider() {
+function CustomSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -63,4 +63,4 @@ function Slider() {
   );
 }
 
-export default Slider;
+export default CustomSlider;

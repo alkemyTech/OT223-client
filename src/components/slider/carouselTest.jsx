@@ -6,7 +6,7 @@ import Marita from '../../assets/MaritaGomez.jpeg';
 import Miriam from '../../assets/MiriamRodriguez.jpg';
 import Rodrigo from '../../assets/RodrigoFuente.jpg';
 
-const Slides = [
+const slides = [
   {
     url: Cecilia,
     text: 'Cecilia Mendez',
@@ -44,4 +44,4 @@ const Slides = [
   },
 ];
 
-export default Slides;
+export default slides;

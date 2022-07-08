@@ -1,46 +1,28 @@
-import Cecilia from '../../assets/CeciliaMendez.jpeg';
-import Marco from '../../assets/MarcoFernandez.jpg';
-import MaríaG from '../../assets/MaríaGarcia.jpg';
-import MaríaI from '../../assets/MaríaIrola.jpg';
-import Marita from '../../assets/MaritaGomez.jpeg';
-import Miriam from '../../assets/MiriamRodriguez.jpg';
-import Rodrigo from '../../assets/RodrigoFuente.jpg';
+import example1 from '../../assets/novedades1.jpg';
+import example2 from '../../assets/novedades2.jpg';
+import example3 from '../../assets/novedades3.jpg';
+import example4 from '../../assets/novedades4.jpg';
 
 const slides = [
   {
-    url: Cecilia,
-    text: 'Cecilia Mendez',
+    url: example1,
+    text: 'texto libre',
     id: 1,
   },
   {
-    url: Marco,
-    text: 'Marco Fernandez',
+    url: example2,
+    text: 'ejemplo',
     id: 2,
   },
   {
-    url: MaríaG,
-    text: 'María Garcia',
+    url: example3,
+    text: 'novedades',
     id: 3,
   },
   {
-    url: MaríaI,
-    text: 'María Irola',
+    url: example4,
+    text: 'texto',
     id: 4,
-  },
-  {
-    url: Marita,
-    text: 'Marita Gomez',
-    id: 5,
-  },
-  {
-    url: Miriam,
-    text: 'Miriam Rodriguez',
-    id: 6,
-  },
-  {
-    url: Rodrigo,
-    text: 'Rodrigo Fuente',
-    id: 7,
   },
 ];
 

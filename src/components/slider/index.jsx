@@ -42,7 +42,7 @@ function CustomSlider() {
           onExisted={() => setAnimating(false)}
           key={slide.id}
         >
-          <img src={slide.url} alt='slide' width={250} height={250} />
+          <img src={slide.url} alt='slide' width='100%' height={500} />
           <CarouselCaption
             captionHeader={slide.text}
             captionText={slide.text}

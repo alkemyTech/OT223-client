@@ -1,11 +1,12 @@
 import React from "react";
+import Home from '../views/home';
 import Register from "../views/register";
 import Login from "../views/login/index";
 
 const Routers = [
   {
     path: "/",
-    element: <h1>FIRST PAGE</h1>,
+    element: <Home />,
     id: 0,
   },
   {
@@ -17,6 +18,11 @@ const Routers = [
     path: "/register",
     element: <Register />,
     id: 1,
+  },
+  {
+    path: '/inicio',
+    element: <Home />,
+    id: 2,
   },
 ];
 

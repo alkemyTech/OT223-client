@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getOrganizationStart } from './store/slicing/organizationSlice';
+import Header from './components/header';
+import Routing from './router';
+import Footer from './components/Footer';
 import './App.css';
-import Routing from './router/index';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getOrganizationStart());
+  }, []);
+
   return (
-    <Routing />
+    <>
+      <Header />
+      <Routing />
+      <Footer />
+    </>
   );
 }
 

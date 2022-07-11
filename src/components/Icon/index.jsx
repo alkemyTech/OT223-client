@@ -39,9 +39,6 @@ const Icon = ({ type = 'triangle', size = 40, ...props }) => {
   return (
     <>
       {
-        console.log(types[type])
-      }
-      {
         types[type](props)
       }
     </>

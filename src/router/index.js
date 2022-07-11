@@ -1,10 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Routers from './routers';
 
 function RouteHandler() {
   return (
-    <BrowserRouter>
       <Routes>
         {Routers.map((route) => (
           <Route
@@ -14,7 +13,6 @@ function RouteHandler() {
           />
         ))}
       </Routes>
-    </BrowserRouter>
   );
 }
 

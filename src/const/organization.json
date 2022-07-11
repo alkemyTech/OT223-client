@@ -1,0 +1,16 @@
+{
+  "social_media": [
+    {
+      "name": "instagram",
+      "baseUrl": "https://instagram.com/"
+    },
+    {
+      "name": "facebook",
+      "baseUrl": "https://facebook.com/"
+    },
+    {
+      "name": "mail",
+      "baseUrl": "mailto:"
+    }
+  ]
+}

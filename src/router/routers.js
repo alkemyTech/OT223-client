@@ -1,21 +1,34 @@
-import React from 'react';
+import React from "react";
+import Home from '../views/home';
+import Register from "../views/register";
+import Login from "../views/login";
 import Contact from '../views/contact';
 
 const Routers = [
   {
-    path: '/',
-    element: <h1>FIRST PAGE</h1>,
+    path: "/",
+    element: <Home />,
     id: 0,
   },
   {
-    path: '/page2',
-    element: <h1>SECOND PAGE</h1>,
+    path: "/login",
+    element: <Login />,
     id: 1,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+    id: 2,
+  },
+  {
+    path: '/inicio',
+    element: <Home />,
+    id: 3,
   },
   {
     path: '/contact',
     element: <Contact />,
-    id: 2,
+    id: 4,
   },
 ];
 

@@ -29,7 +29,7 @@ const Routers = [
     path: '/contact',
     element: <Contact />,
     id: 4,
-  },
+  }
 ];
 
 export default Routers;

@@ -1,9 +1,10 @@
 import React from 'react';
+import CustomSlider from '../../components/slider';
 
 function Home() {
-  return (
-    <>-</>
+  return(
+      <CustomSlider />
   );
-}
+};
 
 export default Home;

@@ -1,7 +1,7 @@
 import React from "react";
 import Home from '../views/home';
 import Register from "../views/register";
-import Login from "../views/login/index";
+import Login from "../views/login";
 
 const Routers = [
   {

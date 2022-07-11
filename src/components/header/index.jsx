@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar, NavbarToggler, Collapse } from 'reactstrap';
 import { Link as LinkRouter } from 'react-router-dom';
-import logo from '../../assets/LOGO-SOMOS-MAS.png';
+import Logo from '../Logo';
 import styles from './header.module.css';
 
 function Header() {
@@ -63,7 +63,7 @@ function Header() {
       className={`${styles.navbarContainer}`}
     >
       <LinkRouter to='/inicio'>
-        <img src={logo} alt='logo-somos-mas' className={`${styles.logo}`} />
+        <Logo size='100'/>
       </LinkRouter>
       <NavbarToggler onClick={() => setToggle(!toggle)} />
       <Collapse navbar className={`${styles.navigationMenu}`} id={toggle ? `${styles.hidden}` : ''}>

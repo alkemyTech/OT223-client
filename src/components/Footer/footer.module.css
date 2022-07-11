@@ -1,0 +1,20 @@
+.footer {
+  height: 450px;
+  font-family: 'Mulish', 'Poppins', Arial, Helvetica, sans-serif;
+  background-color: #C0C0C0;
+}
+
+.footer__logo {
+  width: 220px;
+  background-color: inherit;
+}
+
+.footer_navbar {
+  min-height: 130px;
+  border-block: 2px solid #000000;;
+}
+
+.social_media_item {
+  width: 45px;
+  height: 45px;
+}

@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Form, Button } from 'reactstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
 /* ---- Imports to Components ---- */
-import TextForm from '../../components/textForm';
+import TextForm from '../../components/TextForm';
 import validationScheme from '../../utils/validation';
 
 function RegistrationForm() {

@@ -5,7 +5,7 @@ import { Card,
 } from 'reactstrap';
 
 function CustomCard({
-    urlImage, name, job
+  urlImage, name, job
 }) {
   return (
     <Card

@@ -3,6 +3,7 @@ import Home from '../views/home';
 import Register from "../views/register";
 import Login from "../views/login";
 import Contact from '../views/contact';
+import BackOffice from "../views/Backoffice";
 
 const Routers = [
   {
@@ -30,6 +31,11 @@ const Routers = [
     element: <Contact />,
     id: 4,
   },
+  {
+    path: '/backoffice/*',
+    element: <BackOffice />,
+    id: 5,
+  }
 ];
 
 export default Routers;

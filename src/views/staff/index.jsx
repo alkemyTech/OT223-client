@@ -11,7 +11,7 @@ function Home() {
   return(
       <Container>
         <div className='d-flex justify-content-center mt-4'>
-            <h1>¡Nuestro staff!</h1>
+            <h1 className='fw-bolder'>¡Nuestro staff!</h1>
         </div>
         <Row>
           <Col

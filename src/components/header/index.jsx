@@ -22,11 +22,11 @@ function Header() {
       },
       {
         text: 'Testimonios',
-        route: '/testimonios',
+        route: '/testimonials',
       },
       {
         text: 'Contacto',
-        route: '/contacto',
+        route: '/contact',
       },
       {
         text: 'Contribuye',

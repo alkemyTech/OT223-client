@@ -4,6 +4,8 @@ import Register from "../views/register";
 import Login from "../views/login";
 import Contact from '../views/contact';
 import BackOffice from "../views/Backoffice";
+import Staff from "../views/staff";
+import Testimonials from "../views/testimonials";
 
 const Routers = [
   {
@@ -35,6 +37,16 @@ const Routers = [
     path: '/backoffice/*',
     element: <BackOffice />,
     id: 5,
+  },
+  {
+    path: '/staff',
+    element: <Staff />,
+    id: 6,
+  },
+  {
+    path: '/testimonials',
+    element: <Testimonials />,
+    id: 7,
   }
 ];
 

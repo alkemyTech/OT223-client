@@ -7,6 +7,7 @@ import {
   Label,
   Row,
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 import CustomInput from '../../components/input';
 import CustomButton from '../../components/button';
@@ -21,10 +22,10 @@ function ScreenContact() {
     console.log(data);
   };
   return (
-    <Container>
+    <Container className='pt-4 pb-5'>
       <Row>
         <Col
-          sm='6'
+          lg='6'
         >
           <p className='fs-2 fw-bolder mb-3'>¿Queres contribuir?</p>
           <CustomButton
@@ -72,24 +73,29 @@ function ScreenContact() {
                 value={data.consult}
                 onChange={handleChange}
                 isRequired
+                style={{height: '140px'}}
               />
               <Label for='consult'>
                 Escribe tu consulta...
               </Label>
             </FormGroup>
-            <CustomButton
-              type='submit'
-              className='fw-bolder text-light float-start'
-              texto='Enviar consulta'
-              color='#0038FF'
-              variant='primary'
-            />
-            <CustomButton
-              className='border border-dark fw-bolder float-end text-dark'
-              texto='Ir al inicio'
-              color='#FFFFFF'
-              variant='ligth'
-            />
+            <FormGroup className='pt-2'>
+              <CustomButton
+                type='submit'
+                className='fw-bolder text-light float-start'
+                texto='Enviar consulta'
+                color='#0038FF'
+                variant='primary'
+                />
+                <Link to='/'>
+                <CustomButton
+                  className='border border-dark fw-bolder float-end text-dark'
+                  texto='Ir al inicio'
+                  color='#FFFFFF'
+                  variant='light'
+                  />
+                </Link>
+            </FormGroup>
           </Form>
         </Col>
       </Row>

@@ -9,7 +9,7 @@ function CustomCard({
 }) {
   return (
     <Card
-      className='text-white border-0'
+      className='text-white border-0 m-1'
       style={{
         borderRadius: '20px',
         width: '11rem',

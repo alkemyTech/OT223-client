@@ -17,9 +17,14 @@ export const usersSlice = createSlice({
     getUsersFailure: (state) => {
       state.isLoading = false;
     },
+    deleteUser: (state) => {
+      localStorage.removeItem("user");
+      localStorage.removeItem("token");
+      state.users = [];
+    }
   },
 });
 
-export const { getUsersStart, getUsersSuccess, getUsersFailure } = usersSlice.actions;
+export const { getUsersStart, getUsersSuccess, getUsersFailure, deleteUser } = usersSlice.actions;
 
 export default usersSlice.reducer;

@@ -1,8 +1,13 @@
 import { all } from 'redux-saga/effects';
 import testimonialsSaga from './testimonialsSaga';
-import usersSaga from './usersSaga';
 import organizationSaga from './organizationSaga';
+import authSaga from './auth/authSaga';
+
 
 export default function* rootSagas() {
-  yield all([testimonialsSaga(), usersSaga(), organizationSaga()]);
+  yield all([
+    testimonialsSaga(),
+    organizationSaga(),
+    authSaga(),
+  ])
 }

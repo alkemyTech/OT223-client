@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, Button } from 'reactstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useDispatch, useSelector } from 'react-redux';
 /* ---- Imports to Components ---- */
 import TextForm from '../../components/TextForm/index';
-import validationScheme from '../../utils/validation';
+import { authStart } from '../../store/slicing/auth/authSlice';
+import loginScheme from '../../utils/loginValidation';
 
-function LoginForm() {
+function LoginScreen() {
+
   const {
     control,
     handleSubmit,
@@ -16,12 +19,19 @@ function LoginForm() {
       email: '',
       password: '',
     },
-    resolver: yupResolver(validationScheme),
+    resolver: yupResolver(loginScheme),
   });
+  
+  const dispatch = useDispatch();
+  const user = useSelector((store) => store.auth.user);
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (values) => {
+    dispatch(authStart(values));
   };
+
+  useEffect(() => {
+    console.log(user);
+  }, [dispatch])
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -35,12 +45,12 @@ function LoginForm() {
         title='Contraseña'
         name='password'
         control={control}
-        error={errors.password}
         type='password'
+        error={errors.password}
       />
       <Button>Submit</Button>
     </Form>
   );
 }
 
-export default LoginForm;
+export default LoginScreen;

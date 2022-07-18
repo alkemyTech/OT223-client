@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar, NavbarToggler, Collapse } from 'reactstrap';
 import { Link as LinkRouter } from 'react-router-dom';
+/* import { useDispatch } from 'react-redux'; */
 import Logo from '../Logo';
 import styles from './header.module.css';
 
@@ -40,12 +41,22 @@ function Header() {
         text: 'Registrate',
         route: '/registro',
       },
+      {
+        text: 'Log out',
+        route: '/login'
+      },
     ],
   });
   const [toggle, setToggle] = useState(false);
 
+/*   const dispatch = useDispatch(); */
+
   function activeItem(index) {
     setNavbar({ ...navbar, activeItem: navbar.pages[index] });
+/* 
+    if (navbar.pages.text === 'Log out'){
+      dispatch();
+    } */
   }
 
   function activeItemStyles(index) {

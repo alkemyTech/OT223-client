@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, /* useSelector */ } from 'react-redux';
 import { getOrganizationStart } from './store/slicing/organizationSlice';
+/* import CustomAlert from './components/alert'; */
 import Header from './components/header';
 import Routing from './router';
 import Footer from './components/Footer';
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <>
+      {/* <CustomAlert /> */}
       <Header />
       <Routing />
       <Footer />

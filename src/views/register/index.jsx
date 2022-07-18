@@ -2,18 +2,21 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, Button } from 'reactstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useDispatch, /* useSelector */ } from 'react-redux';
 /* ---- Imports to Components ---- */
 import TextForm from '../../components/TextForm';
 import validationScheme from '../../utils/validation';
+import { authStart } from '../../store/slicing/auth/authSlice';
 
-function RegistrationForm() {
+
+function RegistrationScreen() {
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: '',
+      firstName: '',
       lastName: '',
       email: '',
       password: '',
@@ -22,17 +25,22 @@ function RegistrationForm() {
     resolver: yupResolver(validationScheme),
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const dispatch = useDispatch();
+/*   const newUser = useSelector((store) => store.auth.user); */
+
+  const onSubmit = (values) => {
+      dispatch(authStart(values))
   };
+
+
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <TextForm
         title='Nombre'
-        name='name'
+        name='firstName'
         control={control}
-        error={errors.name}
+        error={errors.firstName}
       />
       <TextForm
         title='Apellido'
@@ -65,4 +73,4 @@ function RegistrationForm() {
   );
 }
 
-export default RegistrationForm;
+export default RegistrationScreen;

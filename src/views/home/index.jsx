@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Container,
 	Col,
 	Row,
@@ -10,6 +11,7 @@ import CardTestimonial from '../../components/card-testimonials';
 import CardNew from '../../components/card-news'
 
 function Home() {
+  const welcomeText = useSelector((state) => state.organization.organization.welcomeText)
   return(
       <Container>
         <Row>
@@ -23,14 +25,7 @@ function Home() {
           >
             <p className='fs-2 fw-bolder'>Hola! Bienvenidx</p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Recusandae dolorum error similique cum vitae fugit reiciendis vel
-              nam dolore alias dignissimos sunt corporis, earum quasi natus
-              facilis numquam porro ipsa. Itaque alias similique quos quia
-              necessitatibus et saepe quisquam dicta, dolorem nemo magni
-              nostrum! Velit sint architecto accusantium pariatur dignissimos
-              natus, repellendus distinctio eius, sequi modi asperiores. Nobis,
-              rerum a.
+              { welcomeText }
             </p>
             <CustomButton
               texto='Contactanos'

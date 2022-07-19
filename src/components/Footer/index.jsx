@@ -9,6 +9,7 @@ import styles from './footer.module.css';
 // TODO: navbar component
 function Footer() {
   const organization = useSelector((state) => state.organization.organization);
+  const socialMedia = Object.entries(organization.social_media)
 
   return (
     <footer className={`${styles.footer} text-center position-relative pt-5`}>
@@ -43,10 +44,10 @@ function Footer() {
       <div className='footer__social-media container mt-5'>
         <div className='row g-0 justify-content-center'>
           {
-            organization.social_media.map((social) => (
-              <div className={`${styles.social_media_item} mx-2`} key={social.name}>
-                <AnchorBlank className='d-inline-block' href={social.url}>
-                  <Icon type={social.name} size={45} />
+            socialMedia.map(([name, url]) => (
+              <div className={`${styles.social_media_item} mx-2`} key={name}>
+                <AnchorBlank className='d-inline-block' href={url}>
+                  <Icon type={name} size={45} />
                 </AnchorBlank>
               </div>
             ))

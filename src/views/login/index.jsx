@@ -31,7 +31,7 @@ function LoginScreen() {
 
   useEffect(() => {
     console.log(user);
-  }, [dispatch])
+  }, [user])
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>

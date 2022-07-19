@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, Button } from 'reactstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useDispatch, /* useSelector */ } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 /* ---- Imports to Components ---- */
 import TextForm from '../../components/TextForm';
 import validationScheme from '../../utils/validation';
-import { authStart } from '../../store/slicing/auth/authSlice';
-
+import { /* addUser, */ authStart } from '../../store/slicing/auth/authSlice';
 
 function RegistrationScreen() {
   const {
@@ -26,12 +25,15 @@ function RegistrationScreen() {
   });
 
   const dispatch = useDispatch();
-/*   const newUser = useSelector((store) => store.auth.user); */
+  const user = useSelector((store) => store.auth.user);
 
   const onSubmit = (values) => {
-      dispatch(authStart(values))
+    dispatch(authStart(values))
   };
 
+    useEffect(() => {
+    console.log(user);
+  }, [user])
 
 
   return (

@@ -1,12 +1,12 @@
 import api from '../interceptor';
 
-export const login = () => api(
+export const login = (data) => api(
   {
     method: 'post',
     url: '/auth/login',
+    data: localStorage.removeItem('token', JSON.stringify(data)),
   }
-).then((response) => response.json())
-.catch((error) => {throw error});
+);
 
 export const register = (data) => api(
   {
@@ -15,7 +15,6 @@ export const register = (data) => api(
     headers: {
       'Content-type': 'application/json'
     },
-    body: JSON.stringify(data),
+    data: JSON.stringify(data),
   }
-).then((response) => response.json())
-.catch((error) => {throw error});
+);

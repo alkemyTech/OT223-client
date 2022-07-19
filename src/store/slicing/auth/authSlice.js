@@ -15,11 +15,11 @@ export const authSlice = createSlice({
       state.isLoading = false;
     },
     addUser: (state, action) => {
+      console.log(state, action);
       state.user = action.payload;
       state.isLoading = false;
     },
     loginUser: (state, action) => {
-      JSON.parse(localStorage.setItem('token'));
       state.user = action.payload;
       state.isLoading = false;
     },

@@ -6,6 +6,7 @@ import { Container,
 
 import CustomButton from '../../components/button';
 import CardStaff from '../../components/card-staff';
+import AnimationView from '../../utils/AnimationView';
 
 function Home() {
   return(
@@ -71,4 +72,4 @@ function Home() {
   );
 };
 
-export default Home;
+export default AnimationView(Home);

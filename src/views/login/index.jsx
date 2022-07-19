@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useDispatch, useSelector } from 'react-redux';
 /* ---- Imports to Components ---- */
 import TextForm from '../../components/TextForm/index';
-import { authStart } from '../../store/slicing/auth/authSlice';
+import { loginStart } from '../../store/slicing/auth/authSlice';
 import loginScheme from '../../utils/loginValidation';
 
 function LoginScreen() {
@@ -26,7 +26,7 @@ function LoginScreen() {
   const user = useSelector((store) => store.auth.user);
 
   const onSubmit = async (values) => {
-    dispatch(authStart(values));
+    dispatch(loginStart(values));
   };
 
   useEffect(() => {

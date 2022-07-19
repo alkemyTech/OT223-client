@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, Button } from 'reactstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -6,7 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 /* ---- Imports to Components ---- */
 import TextForm from '../../components/TextForm';
 import validationScheme from '../../utils/validation';
-import { /* addUser, */ authStart } from '../../store/slicing/auth/authSlice';
+import { registerStart } from '../../store/slicing/auth/authSlice';
+import CustomAlert from '../../components/alert';
 
 function RegistrationScreen() {
   const {
@@ -23,12 +24,11 @@ function RegistrationScreen() {
     },
     resolver: yupResolver(validationScheme),
   });
-
   const dispatch = useDispatch();
   const user = useSelector((store) => store.auth.user);
-
+  const [show, setShow] = useState(false)
   const onSubmit = (values) => {
-    dispatch(authStart(values))
+    dispatch(registerStart(values))
   };
 
     useEffect(() => {
@@ -38,6 +38,13 @@ function RegistrationScreen() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
+      <CustomAlert 
+        title='Registro exitoso'
+        text='Su usuario ha sido registrado. Proceda a iniciar sesión'
+        icon='success'
+        state={show}
+        setState={() => setShow(!show)}
+      />
       <TextForm
         title='Nombre'
         name='firstName'

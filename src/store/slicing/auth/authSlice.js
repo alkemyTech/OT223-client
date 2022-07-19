@@ -6,32 +6,47 @@ export const authSlice = createSlice({
   initialState: {
     user: [],
     isLoading: false,
+    isLoginLoading: false,
   },
   reducers: {
-    authStart: (state) => {
+    registerStart: (state) => {
       state.isLoading = true;
     },
-    authFailure: (state) => {
-      state.isLoading = false;
-    },
-    addUser: (state, action) => {
+    registerSuccess: (state, action) => {
       console.log(state, action);
       state.user = action.payload;
       state.isLoading = false;
     },
-    loginUser: (state, action) => {
-      state.user = action.payload;
+    registerFailure:  (state) => {
       state.isLoading = false;
     },
+    loginStart: (state) => {
+      state.isLoginLoading = true;
+    },
+    loginSuccess: (state, action) => {
+      console.log(state, action);
+      state.user = action.payload;
+      localStorage.setItem('token', action.payload);
+      state.isLoginLoading = false;
+    },
+    loginFailure: (state) => {
+      state.isLoginLoading = false;
+    },
     logout: (state) => {
-      JSON.parse(localStorage.removeItem('token'));
+      /* JSON.parse(localStorage.removeItem('token')); */
       state.user = [];
     }
   }
 })
 
 // Actions
-export const { authStart, authFailure, addUser, loginUser, logout } = authSlice.actions;
+export const { registerStart,
+registerSuccess,
+registerFailure, 
+loginStart,  
+loginSuccess,
+loginFailure, 
+logout } = authSlice.actions;
 
 // Reducer
 export default authSlice.reducer;

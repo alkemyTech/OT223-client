@@ -1,14 +1,13 @@
-import { call, put, /* fork, take, */ delay, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import * as auth from '../../services/auth/auth';
-import { authStart, authFailure, loginUser, /* logout */ } from '../../slicing/auth/authSlice';
+import { loginStart, loginSuccess, loginFailure } from '../../slicing/auth/authSlice';
 
-function* loginRequest() {
+function* loginRequest(action) {
   try {
-    yield delay(1000);
-    const loggedUser = yield call(auth.login);
-    yield put(loginUser(loggedUser));
+    const { data } = yield call(auth.login, action.payload);
+    yield put(loginSuccess(data.data.token, action));
     } catch (error) {
-      yield put(authFailure(error));
+      yield put(loginFailure(error));
     }
     // redirect to home page
 }
@@ -36,5 +35,5 @@ function* loginRequest() {
 } */
 
 export default function* loginSaga() {
-  yield takeEvery(authStart, loginRequest);
+  yield takeEvery(loginStart, loginRequest);
 }

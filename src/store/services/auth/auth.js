@@ -1,20 +1,23 @@
 import api from '../interceptor';
 
-export const login = (data) => api(
+export const login = (user) => api(
   {
     method: 'post',
     url: '/auth/login',
-    data: localStorage.removeItem('token', JSON.stringify(data)),
+    headers: {
+      'Content-type': 'application/json'
+    },
+    data: JSON.stringify(user),
   }
 );
 
-export const register = (data) => api(
+export const register = (user) => api(
   {
     method: 'post',
     url: '/auth/register',
     headers: {
       'Content-type': 'application/json'
     },
-    data: JSON.stringify(data),
+    data: JSON.stringify(user),
   }
 );

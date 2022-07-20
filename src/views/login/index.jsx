@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Form, Button } from 'reactstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 /* ---- Imports to Components ---- */
 import TextForm from '../../components/TextForm/index';
 import { loginStart } from '../../store/slicing/auth/authSlice';
@@ -21,12 +22,13 @@ function LoginScreen() {
     },
     resolver: yupResolver(loginScheme),
   });
-  
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.auth.user);
 
   const onSubmit = async (values) => {
     dispatch(loginStart(values));
+    navigate('/inicio', { replace: true });
   };
 
   useEffect(() => {

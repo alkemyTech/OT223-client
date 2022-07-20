@@ -13,7 +13,6 @@ export const authSlice = createSlice({
       state.isLoading = true;
     },
     registerSuccess: (state, action) => {
-      console.log(state, action);
       state.user = action.payload;
       state.isLoading = false;
     },
@@ -24,7 +23,6 @@ export const authSlice = createSlice({
       state.isLoginLoading = true;
     },
     loginSuccess: (state, action) => {
-      console.log(state, action);
       state.user = action.payload;
       localStorage.setItem('token', action.payload);
       state.isLoginLoading = false;
@@ -32,21 +30,24 @@ export const authSlice = createSlice({
     loginFailure: (state) => {
       state.isLoginLoading = false;
     },
-    logout: (state) => {
-      /* JSON.parse(localStorage.removeItem('token')); */
-      state.user = [];
-    }
+    logout: (state, action) => {
+      state.user = null;
+      localStorage.removeItem('token', action.payload);
+      state.isLogintLoading = false;
+    },
   }
 })
 
 // Actions
-export const { registerStart,
-registerSuccess,
-registerFailure, 
-loginStart,  
-loginSuccess,
-loginFailure, 
-logout } = authSlice.actions;
+export const {
+  registerStart,
+  registerSuccess,
+  registerFailure, 
+  loginStart,  
+  loginSuccess,
+  loginFailure,
+  logout,
+} = authSlice.actions;
 
 // Reducer
 export default authSlice.reducer;

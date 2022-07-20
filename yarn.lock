@@ -8882,11 +8882,6 @@
     "sweetalert2" "^8.5.0"
     "warning" "^4.0.3"
 
-"sweetalert2@^11.4.23":
-  "integrity" "sha512-BfO0gIIHu4SJiixBHpCmd74W+EkORJPX9zy5HLp6vkMAz7RsUED7BhrOBEYrYYgw9nnbxYOwzJDDVPNuK1JQtQ=="
-  "resolved" "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.4.23.tgz"
-  "version" "11.4.23"
-
 "sweetalert2@^8.5.0":
   "integrity" "sha512-nFL++N3bitkEkd487Tv4i5ZxusmnoAAXHjtk7lp603Opxb8wlvVnz3hqa7qiIw6QFL04JC810E6qVQNf8s0vYQ=="
   "resolved" "https://registry.npmjs.org/sweetalert2/-/sweetalert2-8.19.0.tgz"

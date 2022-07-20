@@ -1,9 +1,8 @@
 import React from 'react'
 import { Container} from 'reactstrap'
 
-
 import BackofficeRouter from './backOfficeRouter'
-
+import AnimationView from '../../utils/AnimationView';
 
 function BackOffice() {
   return (
@@ -15,4 +14,4 @@ function BackOffice() {
   )
 }
 
-export default BackOffice
+export default AnimationView(BackOffice);

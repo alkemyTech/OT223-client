@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 /* ---- Imports to Components ---- */
 import TextForm from '../../components/TextForm';
 import validationScheme from '../../utils/validation';
+import AnimationView from '../../utils/AnimationView';
 
 function RegistrationForm() {
   const {
@@ -65,4 +66,4 @@ function RegistrationForm() {
   );
 }
 
-export default RegistrationForm;
+export default AnimationView(RegistrationForm);

@@ -8,9 +8,9 @@ import { useNavigate } from 'react-router-dom';
 import TextForm from '../../components/TextForm/index';
 import { loginStart } from '../../store/slicing/auth/authSlice';
 import loginScheme from '../../utils/loginValidation';
+import AnimationView from '../../utils/AnimationView';
 
 function LoginScreen() {
-
   const {
     control,
     handleSubmit,
@@ -55,4 +55,4 @@ function LoginScreen() {
   );
 }
 
-export default LoginScreen;
+export default AnimationView(LoginScreen);

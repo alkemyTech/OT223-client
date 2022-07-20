@@ -8,8 +8,9 @@ import { useNavigate } from 'react-router-dom';
 import TextForm from '../../components/TextForm';
 import validationScheme from '../../utils/validation';
 import { registerStart } from '../../store/slicing/auth/authSlice';
+import AnimationView from '../../utils/AnimationView';
 
-function RegistrationScreen() {
+function RegisterScreen() {
   const {
     control,
     handleSubmit,
@@ -76,4 +77,4 @@ function RegistrationScreen() {
   );
 }
 
-export default RegistrationScreen;
+export default AnimationView(RegisterScreen);

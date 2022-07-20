@@ -24,7 +24,7 @@ function Header() {
       },
       {
         text: 'Testimonios',
-        route: '/testimonios',
+        route: '/testimonials',
       },
       {
         text: 'Contacto',

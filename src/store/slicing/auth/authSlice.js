@@ -31,9 +31,9 @@ export const authSlice = createSlice({
       state.isLoginLoading = false;
     },
     logout: (state, action) => {
-      state.user = null;
+      state.user = [];
       localStorage.removeItem('token', action.payload);
-      state.isLogintLoading = false;
+      state.isLoginLoading = false;
     },
   }
 })

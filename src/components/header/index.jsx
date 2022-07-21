@@ -80,7 +80,7 @@ function Header() {
           ))
         }
         {
-          user ? (
+          user && user.length > 0 ? (
             <LinkRouter
               to='/login'
               className={`${styles.logInButton}`}

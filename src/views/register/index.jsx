@@ -4,7 +4,7 @@ import { Form, Button } from 'reactstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
 /* ---- Imports to Components ---- */
 import TextForm from '../../components/TextForm';
-import validationScheme from '../../utils/validation';
+import authValidationSchema from '../../utils/authValidation';
 
 function RegistrationForm() {
   const {
@@ -19,7 +19,7 @@ function RegistrationForm() {
       password: '',
       repeatPassword: '',
     },
-    resolver: yupResolver(validationScheme),
+    resolver: yupResolver(authValidationSchema),
   });
 
   const onSubmit = (data) => {

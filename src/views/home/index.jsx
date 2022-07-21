@@ -1,9 +1,13 @@
 import React from 'react';
-import CustomSlider from '../../components/slider';
+import ActivitiesForm from '../../components/ActivitiesForm';
+// import CustomSlider from '../../components/slider';
 
 function Home() {
   return(
-      <CustomSlider />
+    <>
+      {/* <CustomSlider /> */}
+      <ActivitiesForm />
+    </>
   );
 };
 

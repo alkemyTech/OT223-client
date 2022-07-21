@@ -3,7 +3,6 @@ import {
   FormGroup, Label, Input, FormFeedback,
 } from 'reactstrap';
 import { useController } from 'react-hook-form';
-/* eslint react/jsx-props-no-spreading: "off", curly: "error" */
 
 function TextForm({
   title, name, control, error, ...props

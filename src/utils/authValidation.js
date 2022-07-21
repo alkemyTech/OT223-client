@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-const validationScheme = yup.object({
+const authValidationSchema = yup.object({
   name: yup.string().required('Debe introducir un Nombre'),
   lastName: yup.string().required('Debe introducir un Apellido'),
   email: yup
@@ -17,4 +17,4 @@ const validationScheme = yup.object({
     .oneOf([yup.ref('password'), null], 'Las Contraseñas tienen que coincidir'),
 });
 
-export default validationScheme;
+export default authValidationSchema;

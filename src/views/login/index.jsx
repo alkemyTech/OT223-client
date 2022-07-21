@@ -4,8 +4,8 @@ import { Form, Button } from 'reactstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
 /* ---- Imports to Components ---- */
 import TextForm from '../../components/TextForm/index';
-import validationScheme from '../../utils/validation';
 import AnimationView from '../../utils/AnimationView';
+import authValidationSchema from '../../utils/authValidation';
 
 function LoginForm() {
   const {
@@ -17,7 +17,7 @@ function LoginForm() {
       email: '',
       password: '',
     },
-    resolver: yupResolver(validationScheme),
+    resolver: yupResolver(authValidationSchema),
   });
 
   const onSubmit = (data) => {

@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 
 import CustomInput from '../../components/input';
 import CustomButton from '../../components/button';
+import AnimationView from '../../utils/AnimationView';
 
 function ScreenContact() {
   const [data, setData] = useState({
@@ -103,4 +104,4 @@ function ScreenContact() {
   );
 }
 
-export default ScreenContact;
+export default AnimationView(ScreenContact);

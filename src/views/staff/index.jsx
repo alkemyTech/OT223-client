@@ -8,6 +8,7 @@ import styles from './staff.module.css'
 
 import CustomButton from '../../components/button';
 import CardStaff from '../../components/card-staff';
+import AnimationView from '../../utils/AnimationView';
 
 const staffMembers = [
   {
@@ -78,4 +79,4 @@ function Staff() {
   );
 };
 
-export default Staff;
+export default AnimationView(Staff);

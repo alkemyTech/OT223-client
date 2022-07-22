@@ -6,6 +6,7 @@ import { Container,
 
 import CustomButton from '../../components/button';
 import CardTestimonial from '../../components/card-testimonials';
+import AnimationView from '../../utils/AnimationView';
 
 function Home() {
   return(
@@ -55,4 +56,4 @@ function Home() {
   );
 };
 
-export default Home;
+export default AnimationView(Home);

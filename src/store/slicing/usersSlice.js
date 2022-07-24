@@ -20,6 +20,6 @@ export const usersSlice = createSlice({
   },
 });
 
-export const { getUsersStart, getUsersSuccess, getUsersFailure } = usersSlice.actions;
+export const { getUsersStart, getUsersSuccess, getUsersFailure, addUser } = usersSlice.actions;
 
 export default usersSlice.reducer;

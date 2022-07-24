@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, Button } from 'reactstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 /* ---- Imports to Components ---- */
 import TextForm from '../../components/TextForm';
 import validationScheme from '../../utils/validation';
+import { registerStart } from '../../store/slicing/auth/authSlice';
 import AnimationView from '../../utils/AnimationView';
 
-function RegistrationForm() {
+function RegisterScreen() {
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: '',
+      firstName: '',
       lastName: '',
       email: '',
       password: '',
@@ -22,18 +25,26 @@ function RegistrationForm() {
     },
     resolver: yupResolver(validationScheme),
   });
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = useSelector((store) => store.auth.user);
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (values) => {
+    await dispatch(registerStart(values));
+    navigate('/login', { replace: true });
   };
+
+  useEffect(() => {
+    console.log(user);
+  }, [user])
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <TextForm
         title='Nombre'
-        name='name'
+        name='firstName'
         control={control}
-        error={errors.name}
+        error={errors.firstName}
       />
       <TextForm
         title='Apellido'
@@ -66,4 +77,4 @@ function RegistrationForm() {
   );
 }
 
-export default AnimationView(RegistrationForm);
+export default AnimationView(RegisterScreen);

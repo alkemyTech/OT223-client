@@ -73,7 +73,7 @@ function Header() {
               to={page.route}
               key={page.text}
               className={activeItemStyles(index)}
-              onClick={() => { activeItem(index); }}
+              onClick={() => { setToggle(!toggle); activeItem(index); }}
             >
               {page.text}
             </LinkRouter>
@@ -93,12 +93,14 @@ function Header() {
               <LinkRouter
                 to='/login'
                 className={`${styles.logInButton}`}
+                onClick={() => { setToggle(!toggle) }}
               >
                 Log in
               </LinkRouter>
               <LinkRouter
                 to='/registro'
                 className={`${styles.registerButton}`}
+                onClick={() => { setToggle(!toggle) }}
               >
                 Registrate
               </LinkRouter>

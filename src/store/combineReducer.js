@@ -1,10 +1,14 @@
 import { combineReducers } from 'redux';
 import testimonials from './slicing/testimonialsSlice';
-import users from './slicing/usersSlice';
 import organization from './slicing/organizationSlice';
+import users from './slicing/usersSlice';
+import auth from './slicing/auth/authSlice';
+import alert from './slicing/controller/alertSlice'
 
 export default combineReducers({
   testimonials,
-  users,
   organization,
+  users,
+  auth,
+  alert
 });

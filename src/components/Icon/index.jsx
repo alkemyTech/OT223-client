@@ -11,6 +11,7 @@ import { ReactComponent as Organization } from '../../assets/images/organization
 import { ReactComponent as Categories } from '../../assets/images/categories.svg'
 import { ReactComponent as Slides } from '../../assets/images/slides.svg'
 import { ReactComponent as Users } from '../../assets/images/users.svg'
+import { ReactComponent as LinkedIn } from '../../assets/images/linkedin.svg'
 
 const types = {
   triangle: (props) => <Triangle {...props} />,
@@ -25,6 +26,7 @@ const types = {
   categories: (props) => <Categories {...props} />,
   slides: (props) => <Slides {...props} />,
   users: (props) => <Users {...props} />,
+  linkedin: (props) => <LinkedIn {...props} />,
 };
 
 const Icon = ({ type = 'triangle', size = 40, ...props }) => {

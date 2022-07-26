@@ -2,7 +2,7 @@ import api from './interceptor';
 
 const getOrganizationData = () => api({
   method: 'get',
-  url: 'organizations/1',
+  url: 'api/organizations/1/public',
 });
 
 export default getOrganizationData;

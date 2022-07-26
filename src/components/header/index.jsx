@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Navbar, NavbarToggler, Collapse } from 'reactstrap';
 import { Link as LinkRouter } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../../store/slicing/auth/authSlice'
 import Logo from '../Logo';
 import styles from './header.module.css';
 
@@ -26,23 +28,17 @@ function Header() {
       },
       {
         text: 'Contacto',
-        route: '/contact',
+        route: '/contacto',
       },
       {
         text: 'Contribuye',
         route: '/contribuciones',
       },
-      {
-        text: 'Log in',
-        route: '/login',
-      },
-      {
-        text: 'Registrate',
-        route: '/registro',
-      },
     ],
   });
   const [toggle, setToggle] = useState(false);
+  const dispatch = useDispatch();
+  const { user } = useSelector((store) => store.auth)
 
   function activeItem(index) {
     setNavbar({ ...navbar, activeItem: navbar.pages[index] });
@@ -55,6 +51,10 @@ function Header() {
     return `${styles.menuItems}`;
   }
   
+  const onLogOut = () => {
+    dispatch(logout());
+  }
+
   return (
     <Navbar
       color='light'
@@ -78,6 +78,32 @@ function Header() {
               {page.text}
             </LinkRouter>
           ))
+        }
+        {
+          user && user.length > 0 ? (
+            <LinkRouter
+              to='/login'
+              className={`${styles.logInButton}`}
+              onClick={onLogOut}
+            >
+              Log out
+            </LinkRouter>
+          ) : (
+            <>
+              <LinkRouter
+                to='/login'
+                className={`${styles.logInButton}`}
+              >
+                Log in
+              </LinkRouter>
+              <LinkRouter
+                to='/registro'
+                className={`${styles.registerButton}`}
+              >
+                Registrate
+              </LinkRouter>
+            </>
+          ) 
         }
       </Collapse>
     </Navbar>

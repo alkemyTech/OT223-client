@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, Button } from 'reactstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 /* ---- Imports to Components ---- */
 import TextForm from '../../components/TextForm/index';
-import validationScheme from '../../utils/validation';
+import { loginStart } from '../../store/slicing/auth/authSlice';
+import loginScheme from '../../utils/loginValidation';
 import AnimationView from '../../utils/AnimationView';
 
-function LoginForm() {
+function LoginScreen() {
   const {
     control,
     handleSubmit,
@@ -17,12 +20,20 @@ function LoginForm() {
       email: '',
       password: '',
     },
-    resolver: yupResolver(validationScheme),
+    resolver: yupResolver(loginScheme),
   });
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = useSelector((store) => store.auth.user);
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (values) => {
+    dispatch(loginStart(values));
+    navigate('/inicio', { replace: true });
   };
+
+  useEffect(() => {
+    console.log(user);
+  }, [user])
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -36,12 +47,12 @@ function LoginForm() {
         title='Contraseña'
         name='password'
         control={control}
-        error={errors.password}
         type='password'
+        error={errors.password}
       />
       <Button>Submit</Button>
     </Form>
   );
 }
 
-export default AnimationView(LoginForm);
+export default AnimationView(LoginScreen);

@@ -6,7 +6,14 @@ export const organizationSlice = createSlice({
     organization: {
       name: '',
       image: '',
-      social_media: [],
+      welcomeText: '',
+      address: '',
+      phone: '',
+      social_media: {
+        instagram: '',
+        facebook: '',
+        linkedin: '',
+      },
     },
     isLoading: false,
   },

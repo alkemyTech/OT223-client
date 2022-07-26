@@ -1,9 +1,10 @@
 import React from "react";
 import Home from '../views/home';
-import Register from "../views/register";
-import Login from "../views/login";
+import RegisterScreen from '../views/register';
+import LoginScreen from '../views/login';
 import Contact from '../views/contact';
 import BackOffice from "../views/Backoffice";
+import News from '../views/news';
 import Staff from "../views/staff";
 import Testimonials from "../views/testimonials";
 
@@ -15,12 +16,12 @@ const Routers = [
   },
   {
     path: "/login",
-    element: <Login />,
+    element: <LoginScreen />,
     id: 1,
   },
   {
-    path: "/register",
-    element: <Register />,
+    path: "/registro",
+    element: <RegisterScreen />,
     id: 2,
   },
   {
@@ -29,7 +30,7 @@ const Routers = [
     id: 3,
   },
   {
-    path: '/contact',
+    path: '/contacto',
     element: <Contact />,
     id: 4,
   },
@@ -47,6 +48,11 @@ const Routers = [
     path: '/testimonials',
     element: <Testimonials />,
     id: 7,
+  },
+  {
+    path: '/novedades',
+    element: <News />,
+    id: 8,
   }
 ];
 

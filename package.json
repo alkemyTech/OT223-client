@@ -24,7 +24,8 @@
     "redux": "^4.2.0",
     "redux-saga": "^1.1.3",
     "sweetalert2-react": "^0.8.3",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "ckeditor5": "file:./custom-ckeditor5"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  ignorePatterns: ['public/**/*.js', 'test/**'],
+  ignorePatterns: ['public/**/*.js', 'test/**', 'custom-ckeditor5/**'],
   extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
   parserOptions: {
     ecmaFeatures: {

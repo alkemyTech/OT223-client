@@ -79,4 +79,4 @@ function Staff() {
   );
 };
 
-export default AnimationView(Home);
+export default AnimationView(Staff);

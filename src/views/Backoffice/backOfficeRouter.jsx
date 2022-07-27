@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import BackofficeForm from "../../components/BackofficeForm";
 import ListOfBackofficeCards from "../../components/ListOfBackofficeCards";
 
 const routers = [
@@ -15,7 +16,7 @@ const routers = [
   },
   {
     path: '/activities',
-    element: <h2>Actividades</h2>,
+    element: <BackofficeForm method='create' />,
     id: 2
   },
   {

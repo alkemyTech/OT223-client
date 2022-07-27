@@ -7,9 +7,9 @@ import { useNavigate } from 'react-router-dom';
 /* ---- Imports to Components ---- */
 import TextForm from '../../components/TextForm';
 import CustomButton from '../../components/button';
-import validationScheme from '../../utils/validation';
 import { registerStart } from '../../store/slicing/auth/authSlice';
 import AnimationView from '../../utils/AnimationView';
+import authValidationSchema from '../../utils/authValidation';
 
 function RegisterScreen() {
   const {
@@ -24,7 +24,7 @@ function RegisterScreen() {
       password: '',
       repeatPassword: '',
     },
-    resolver: yupResolver(validationScheme),
+    resolver: yupResolver(authValidationSchema),
   });
   const navigate = useNavigate();
   const dispatch = useDispatch();

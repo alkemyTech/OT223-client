@@ -217,7 +217,7 @@ function Home() {
         </Col>
       </Row>
     </Container>
-  );
-};
+  )
+}
 
 export default AnimationView(Home);

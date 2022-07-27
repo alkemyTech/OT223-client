@@ -16,7 +16,7 @@ const routers = [
   },
   {
     path: '/activities',
-    element: <h2>Actividades</h2>,
+    element: <h2>Activities</h2>,
     id: 2
   },
   {

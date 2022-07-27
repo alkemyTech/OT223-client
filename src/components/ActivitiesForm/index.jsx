@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap'
-import { CKEditor } from '@ckeditor/ckeditor5-react';
+import CKEditor from '@ckeditor/ckeditor5-react';
 import Editor from 'ckeditor5/build/ckeditor';
 
 const ActivitiesForm = ({ data = {}, method, name }) => {

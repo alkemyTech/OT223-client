@@ -5,4 +5,9 @@ const getUsers = () => api({
   url: '/api/user',
 });
 
-export default getUsers;
+const deleteUser = () => api({
+  method: 'delete',
+  url: '/api/user',
+});
+
+export { getUsers, deleteUser };

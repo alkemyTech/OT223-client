@@ -16,7 +16,7 @@ function Header() {
       },
       {
         text: 'Nosotros',
-        route: '/nosotros',
+        route: '/staff',
       },
       {
         text: 'Novedades',
@@ -79,11 +79,12 @@ function Header() {
             </LinkRouter>
           ))
         }
+        <div className={styles.authButtons}>
         {
           user && user.length > 0 ? (
             <LinkRouter
-              to='/login'
-              className={`${styles.logInButton}`}
+            to='/login'
+            className={`${styles.logInButton}`}
               onClick={onLogOut}
             >
               Log out
@@ -107,6 +108,7 @@ function Header() {
             </>
           ) 
         }
+        </div>
       </Collapse>
     </Navbar>
   );

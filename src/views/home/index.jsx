@@ -11,6 +11,29 @@ import CardTestimonial from '../../components/card-testimonials';
 import CardNew from '../../components/card-news';
 import AnimationView from '../../utils/AnimationView';
 
+const testimonies = [
+  {
+    name: 'Steven Booth',
+    image: 'https://i.imgur.com/i4JgWS7.jpg',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit..'
+  },
+  {
+    name: 'Harold Clark',
+    image: 'https://i.imgur.com/eq0IyTj.jpg',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit..',
+  },
+  {
+    name: 'Theresa Thomas',
+    image: 'https://i.imgur.com/Wkc0sE5.jpg',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit..',
+  },
+  {
+    name: 'Kimberly Kennedy',
+    image: 'https://i.imgur.com/1IOv9gU.jpg',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit..',
+  },
+]
+
 function Home() {
   const welcomeText = useSelector((state) => state.organization.organization.welcomeText)
   return(
@@ -72,6 +95,58 @@ function Home() {
               job='Ceo / CoFounder'
             />
           </Col>
+          <Col
+            xs='6'
+            sm='4'
+            md='4'
+            ld='3'
+            xl='2'
+          >
+            <CardStaff
+              urlImage='https://i.imgur.com/Uwdc6N2.jpg'
+              name='Maria Irola'
+              job='Voluntaria'
+            />
+          </Col>
+          <Col
+            xs='6'
+            sm='4'
+            md='4'
+            ld='3'
+            xl='2'
+          >
+            <CardStaff
+              urlImage='https://i.imgur.com/ZJ1ijlk.jpg'
+              name='Marco Fernandez'
+              job='Voluntario'
+            />
+          </Col>
+          <Col
+            xs='6'
+            sm='4'
+            md='4'
+            ld='3'
+            xl='2'
+          >
+            <CardStaff
+              urlImage='https://i.imgur.com/rqhuRSt.jpg'
+              name='Miriam Rodriguez'
+              job='Voluntaria'
+            />
+          </Col>
+          <Col
+            xs='6'
+            sm='4'
+            md='4'
+            ld='3'
+            xl='2'
+          >
+            <CardStaff
+              urlImage='https://i.imgur.com/XXI0Qgw.jpg'
+              name='Marita Gomez'
+              job='CoFounder'
+            />
+          </Col>
         </Row>
         <Row>
           <Col
@@ -83,19 +158,24 @@ function Home() {
           </Col>
         </Row>
         <Row>
-          <Col
-            xs='6'
-            sm='4'
-            md='4'
-            lg='3'
-            xl='2'
-          >
-            <CardTestimonial
-              urlImage='https://s3-alpha-sig.figma.com/img/82b4/54ae/5b8530a955bf60e1962bea47c543dea3?Expires=1658707200&Signature=QKthbYBRH-epZq8xR6O-dOMNzwCghTDCTMYsSsmBXjW7CovJzeIDHIRdKoOTCBdv~eZLLjJPHEvnPxWCn4G7nF6ntW6PD7CxG7EkEAPlluD5xyguRnYRHRtYM6lxxJOfzBO5-28YGUgiXr3bcHy6tOPcPMFoT0gKZI5tADaIajr3rSgEC-NPfxai1A2D8CmYsbUuOGLmMFR1B9p228Gs8tCuE1~5bQCdELg~nKolmxFVfFP-JnvCJIFmG~aw0LIQPXJsiZYz4gOxwtDV2MPU9yznSP~J4fNisBTtinL1nlnOcmdF4z4uiv5wZaO4NxfgeGe46a4bQvUzpynzQKDrfg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'
-              names='Nombres y Apellidos'
-              testimonial='testimoniotestimoniotestimoniotestimoniotestimoniotestimon'
-            />
-          </Col>
+          {
+            testimonies.map(testimony => (
+              <Col
+                key={testimony.name}
+                xs='6'
+                sm='4'
+                md='4'
+                lg='3'
+                xl='2'
+              >
+                <CardTestimonial
+                  urlImage={testimony.image}
+                  names={testimony.name}
+                  testimonial={testimony.content}
+                />
+              </Col>
+            ))
+          }
         </Row>
         <Row>
           <Col
@@ -112,7 +192,7 @@ function Home() {
         <Col
           xs='12'
           sm='12'
-          md='5'
+          md='12'
           lg='6'
           xl='6'
           className='my-2'

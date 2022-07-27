@@ -7,20 +7,31 @@ import {
   Label,
   Row,
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
 import CustomInput from '../../components/input';
 import CustomButton from '../../components/button';
 import AnimationView from '../../utils/AnimationView';
+import { setAlert } from '../../store/slicing/controller/alertSlice';
 
 function ScreenContact() {
   const [data, setData] = useState({
     names: '', email: '', consult: '',
   });
+  const dispatch = useDispatch()
   const handleChange = (e) => setData({ ...data, [e.target.name]: e.target.value });
+  
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(data);
+    setTimeout(() => {
+      dispatch(setAlert({
+        title: 'Enviado!',
+        text: 'En breve te contactaremos',
+        icon: 'success'
+      }))
+    }, 1000);
+    return <Navigate to='/' />
   };
   return (
     <Container className='pt-4 pb-5'>

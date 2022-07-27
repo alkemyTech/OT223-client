@@ -1,8 +1,12 @@
 import api from './interceptor';
 
-const getAllTestimonials = () => api({
+export const getAllTestimonials = () => api({
   method: 'get',
-  url: '/api/testimonials/all',
+  url: '/api/testimonies/all',
 });
 
-export default getAllTestimonials;
+export const postTestimony = (data) => api({
+  method: 'POST',
+  url: '/api/testimonies',
+  data
+})

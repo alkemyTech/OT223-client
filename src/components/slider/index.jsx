@@ -3,6 +3,7 @@ import {
   Carousel, CarouselIndicators, CarouselItem, CarouselCaption, CarouselControl,
 } from 'reactstrap';
 import slides from './carouselTest';
+import styles from './slides.module.css'
 
 function CustomSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -42,7 +43,7 @@ function CustomSlider() {
           onExisted={() => setAnimating(false)}
           key={slide.id}
         >
-          <img src={slide.url} alt='slide' width='100%' height={500} />
+          <img src={slide.url} alt='slide' className={styles.slider_img} />
           <CarouselCaption
             captionHeader={slide.text}
             captionText={slide.text}

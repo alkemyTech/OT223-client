@@ -16,7 +16,7 @@ const routers = [
   },
   {
     path: '/activities',
-    element: <BackofficeForm method='create' />,
+    element: <h2>Actividades</h2>,
     id: 2
   },
   {
@@ -26,7 +26,7 @@ const routers = [
   },
   {
     path: '/testimonies',
-    element: <h2>Testimonios</h2>,
+    element:  <BackofficeForm method='create' />,
     id: 4
   },
   {

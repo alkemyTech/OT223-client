@@ -6,8 +6,9 @@ import { AnimatePresence } from 'framer-motion';
 import Routers from './routers';
 
 
-const PrivateRoutes = ({ user }) => {
-  if (user && user.length > 0) return <Outlet />
+const PrivateRoutes = ({ isAdmin }) => {
+  console.log(isAdmin);
+  if (isAdmin) return <Outlet />
   return <Navigate to='/' />
 };
 
@@ -18,7 +19,7 @@ const PublicRoutes = ({ user }) => {
 
 function RouteHandler() {
   const location = useLocation();
-  const { user } = useSelector((store) => store.auth)
+  const { user, isAdmin } = useSelector((store) => store.auth)
 
   return (
     <AnimatePresence>
@@ -43,7 +44,7 @@ function RouteHandler() {
               />
             ))}
         </Route>
-        <Route element={<PrivateRoutes user={user} />}>
+        <Route element={<PrivateRoutes isAdmin={isAdmin} />}>
           {Routers.map((route) =>
             route.type === "private" && (
               <Route

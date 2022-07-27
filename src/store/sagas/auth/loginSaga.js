@@ -6,7 +6,7 @@ import { setAlert } from '../../slicing/controller/alertSlice';
 function* loginRequest(action) {
   try {
     const { data } = yield call(auth.login, action.payload);
-    yield put(loginSuccess(data.data.token, action));
+    yield put(loginSuccess(data.data, action));
     yield put(setAlert({
       title: 'Bienvenid@',
       text: 'Gracias por volver',

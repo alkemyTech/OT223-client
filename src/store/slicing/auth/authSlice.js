@@ -5,6 +5,7 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState: {
     user: [],
+    isAdmin: true,
     isLoading: false,
     isLoginLoading: false,
   },
@@ -23,8 +24,9 @@ export const authSlice = createSlice({
       state.isLoginLoading = true;
     },
     loginSuccess: (state, action) => {
-      state.user = action.payload;
-      localStorage.setItem('token', action.payload);
+      state.user = action.payload.token;
+      localStorage.setItem('token', action.payload.token);
+      state.isAdmin = action.payload.isAdmin
       state.isLoginLoading = false;
     },
     loginFailure: (state) => {
@@ -35,6 +37,9 @@ export const authSlice = createSlice({
       localStorage.removeItem('token', action.payload);
       state.isLoginLoading = false;
     },
+    autoLogin: (state, action) => {
+      state.user = action.payload.token
+    }
   }
 })
 
@@ -47,6 +52,7 @@ export const {
   loginSuccess,
   loginFailure,
   logout,
+  autoLogin
 } = authSlice.actions;
 
 // Reducer

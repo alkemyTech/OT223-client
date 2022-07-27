@@ -31,9 +31,7 @@
   font-weight: 700;
 }
 .logInButton {
-  display: flex;
-  align-items: center;
-  justify-self: center;
+  display: block;
   text-decoration: none;
   padding: 10px 25px;
   border: 1px solid black;
@@ -43,13 +41,9 @@
   font-weight: 400;
   margin-left: 1rem;
   height: 44px;
-  margin: 0 1rem;
   color: #000000;
 }
 .registerButton {
-  display: flex;
-  align-items: center;
-  justify-self: center;
   text-decoration: none;
   padding: 10px 25px;
   width: 129px;
@@ -59,7 +53,6 @@
   border-radius: 20px;
   color: #FFFFFF;
   font-size: 16px;
-  margin: 0 1rem;
 }
 .logInButton:hover {
   color: #000000;
@@ -71,18 +64,6 @@
 }
 
 @media (min-width: 992px) and (max-width: 1075px) {
-  .registerButton {
-    padding: 5px 10px;
-    width: 80px;
-    font-size: 13px;
-    margin: 0 0.5rem;
-  }
-  .logInButton {
-    padding: 5px 10px;
-    width: 70px;
-    font-size: 13px;
-    margin: 0 0.5rem;
-  }
   .menuItems {
     font-size: 13px;
     margin: 0 0.5rem;
@@ -90,20 +71,6 @@
   .menuItems:hover {
     font-size: 13px;
     color: #000000;
-    font-weight: 700;
-    margin: 0 0.5rem;
-  }
-  .logInButton:hover {
-    padding: 5px 10px;
-    font-size: 13px;
-    color: #000000;
-    font-weight: 700;
-    margin: 0 0.5rem;
-  }
-  .registerButton:hover {
-    padding: 5px 10px;
-    font-size: 13px;
-    color: #FFFFFF;
     font-weight: 700;
     margin: 0 0.5rem;
   }
@@ -134,44 +101,22 @@
     display: flex;
     justify-content: center;
   }
-  .logInButton {
-    margin: 0 0 0.5rem;
-    padding: 0;
-    width: 100%;
-    border: none;
-    padding: 0;
-    background-color: #f8f9fa !important;
-  }
-  .registerButton {
-    margin: 0 0 0.5rem;
-    padding: 0;
-    width: 100%;
-    color: #000000;
-    background-color: #f8f9fa;
-  }
   .menuItems:hover {
     color: #000000;
     background-color: #FFFFFF;
     font-weight: 700;
     margin: 0 0 0.5rem;
   }
-  .logInButton:hover {
-    color: #000000;
-    font-weight: 700;
-    margin: 0 0 0.5rem;
-    border: none;
-    padding: 0;
-  }
-  .registerButton:hover {
-    padding: 0;
-    color: #000000;
-    font-weight: 700;
-    margin: 0 0 0.5rem;
-    width: 100%;
-  }
   .active {
     color: #000000;
     font-weight: 700;
     margin: 0 0 0.5rem;
   }
+}
+
+.authButtons {
+  display: flex;
+  justify-content: center;
+  gap:5px;
+  margin: 10px;
 }

@@ -14,9 +14,9 @@ function CustomCard({
     >
 			<Row>
 				<Col
-					xs='6'
-					sm='6'
-					md='10'
+					xs='11'
+					sm='11'
+					md='11'
 					lg='6'
 					xl='5'
 				>
@@ -27,9 +27,9 @@ function CustomCard({
 					/>
 				</Col>
 				<Col
-					xs='6'
-					sm='6'
-					md='10'
+					xs='12'
+					sm='12'
+					md='12'
 					lg='6'
 					xl='7'
 				>

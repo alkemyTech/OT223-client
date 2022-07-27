@@ -8,7 +8,30 @@ import CustomButton from '../../components/button';
 import CardTestimonial from '../../components/card-testimonials';
 import AnimationView from '../../utils/AnimationView';
 
-function Home() {
+const testimonies = [
+  {
+    name: 'Steven Booth',
+    image: 'https://i.imgur.com/i4JgWS7.jpg',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit..'
+  },
+  {
+    name: 'Harold Clark',
+    image: 'https://i.imgur.com/eq0IyTj.jpg',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit..',
+  },
+  {
+    name: 'Theresa Thomas',
+    image: 'https://i.imgur.com/Wkc0sE5.jpg',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit..',
+  },
+  {
+    name: 'Kimberly Kennedy',
+    image: 'https://i.imgur.com/1IOv9gU.jpg',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit..',
+  },
+]
+
+function Testimonies() {
   return(
       <Container>
         <div className='d-flex justify-content-center mt-4'>
@@ -17,21 +40,24 @@ function Home() {
         <Row
         className='mb-4'
         >
-        {/** data.map(data => Col)  */}
-          <Col
-            xs='6'
-            sm='4'
-            md='4'
-            ld='3'
-            xl='2'
-            className='mt-4'
-          >
-            <CardTestimonial
-              urlImage='https://s3-alpha-sig.figma.com/img/032c/bda0/d4bf4f7c13f1f38ae7b226e726fb1132?Expires=1658707200&Signature=Hc29-uhQu6C-dgGg6ABYNW9mAwGHTKKBi8KJ-kDS7q61JNnbUvdWwiqOi0ZMaZbwQU4VNzPoYG79W77z3yH4JfeSNJT~TAMSa7CIptUS42yCsJbFqJBfDAHvZYRIS~6A-U6lBx86TNUbhz434y~0f4wT~~yFvwU2F7f9XAWO5QrD4Bn~qKDFHcBEPoxlNElux84e8WcDNkwyi5DZ7wdjv9AEqLTfK~Z6uXTk6p95zt4MSrQbnQhOB3TwkB01LF7RpPea9IJmnd1WC1ZkPuaQohxK5ewNX0SFFZMZxFEENSP1XqEZQ7ogyzapNqhgv7qaJRTsVtlTJNbjyyHsC~Q~lw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'
-              names='Nombre y Apellido'
-              testimonial='testimoniotestimoniotestimoniotestimoniotestimoniotestimoniotestimonio'
-            />
-          </Col>
+        {
+            testimonies.map(testimony => (
+              <Col
+                key={testimony.name}
+                xs='6'
+                sm='4'
+                md='4'
+                lg='3'
+                xl='2'
+              >
+                <CardTestimonial
+                  urlImage={testimony.image}
+                  names={testimony.name}
+                  testimonial={testimony.content}
+                />
+              </Col>
+            ))
+          }
         </Row>
         <Row>
           <Col
@@ -52,8 +78,9 @@ function Home() {
             />
           </Col>
         </Row>
+        <br /><br /><br /><br />
       </Container>
   );
 };
 
-export default AnimationView(Home);
+export default AnimationView(Testimonies);
